@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: batchr
+Version: 0.1
+Summary: Command-line interface to Flickr, with backup features
+Home-page: http://ascher.ca/batchr
+Author: David Ascher
+Author-email: david.ascher@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN

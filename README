@@ -1,0 +1,34 @@
+proto-readme:
+
+0) requirement: Python, probably 2.4 or later (untested with 2.3-)
+
+1) get a flickr API & secret (see http://www.flickr.com/services/api/keys/)
+
+2) stuff the above in two environment variables FLICKR_BATCHR_KEY and 
+   FLICKR_BATCHR_SECRET
+
+3) here are some usage patterns:
+
+find the IDs for your sets:
+    python ./batchr.py listsets
+
+download original size images taken in 1997, place in specified directory:
+    python ./batchr.py download -s o -y 1997 --base=/Volumes/BACKUP/photos        
+download large-sized (-s b) images in specified set (-S ...) place in 
+specified directory using a year/month/id file layout:
+
+    python batchr.py download -S 7215XXX00 --base="set_photos" \
+    --format="%(year)s/%(month_name)s/%(id)s.jpg" -s b      
+
+download medium sized images tagged with foo taken in jan 1999:
+
+    python batchr.py download --tag foo -y 1999 -m 1 --base="jan_99"
+
+Note that downloads are incremental unless the -f/--force option is specified.
+
+Other notable options to the 'download' command:
+  --gui uses a GUI progress bar on OS X if CocoaDialogs has been installed
+  --list lists each transaction instead of just a progress bar
+  -v doesn't actually do the download
+
+Feedback welcome on code.google.com/p/batchr or email to david.ascher@gmail.com
